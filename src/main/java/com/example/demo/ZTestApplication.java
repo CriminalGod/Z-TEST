@@ -20,7 +20,8 @@ public class ZTestApplication implements CommandLineRunner{
 		SpringApplication.run(ZTestApplication.class, args);
 	}
 
-	private void createPerson() {
+	private void createPerson() 
+{
 	    
 	    Person person = new Person("ram","kumar","ramkumar@gmail.com", new Date());
 	    System.out.println(person);
