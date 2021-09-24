@@ -11,27 +11,27 @@ import com.example.demo.entities.Person;
 import com.example.demo.service.PersonService;
 
 @SpringBootApplication
-public class ZTestApplication implements CommandLineRunner{
+public class ZTestApplication implements CommandLineRunner {
 
     @Autowired
     private PersonService personService;
 
-	public static void main(String[] args) {
-		SpringApplication.run(ZTestApplication.class, args);
-	}
+    public static void main(String[] args) {
+	SpringApplication.run(ZTestApplication.class, args);
+    }
 
-	private void createPerson() 
-{
-	    
-	    Person person = new Person("ram","kumar","ramkumar@gmail.com", new Date());
-	    System.out.println(person);
-	    personService.createPerson(person);
-		
-	}
+    private void createPerson() {
 
-	@Override
-	public void run(String... args) throws Exception {
-	    
-	}
+	Person person = new Person("ram", "kumar", "ramkumar@gmail.com", new Date());
+	System.out.println(person);
+	Person p = personService.createPerson(person);
+	System.out.println(p);
+
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+	createPerson();
+    }
 
 }
