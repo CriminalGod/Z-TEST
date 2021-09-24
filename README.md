@@ -1,2 +1,0 @@
-# Z-TEST
-Practice
