@@ -15,15 +15,9 @@ public class ZTestApplication implements CommandLineRunner{
 
     @Autowired
     private PersonService personService;
-    
+
 	public static void main(String[] args) {
 		SpringApplication.run(ZTestApplication.class, args);
-	}
-
-	@Override
-	public void run(String... args) throws Exception {
-
-	    createPerson();
 	}
 
 	private void createPerson() {
@@ -31,6 +25,11 @@ public class ZTestApplication implements CommandLineRunner{
 	    Person person = new Person("ram","kumar","ramkumar@gmail.com", new Date());
 	    System.out.println(person);
 	    personService.createPerson(person);
+		
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
 	    
 	}
 

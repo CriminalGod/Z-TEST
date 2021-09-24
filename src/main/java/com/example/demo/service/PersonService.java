@@ -10,10 +10,9 @@ import com.example.demo.repo.PersonRepo;
 public class PersonService {
 
     @Autowired
-    PersonRepo personRepo; 
-    
+    PersonRepo personRepo;
+
     public Person createPerson(Person person) {
 	return personRepo.save(person);
     }
-
 }

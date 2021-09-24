@@ -44,4 +44,5 @@ public class Person {
 	this.email = email;
 	this.creationDate = creationDate;
     }
+    
 }
