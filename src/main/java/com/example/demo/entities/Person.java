@@ -37,7 +37,8 @@ public class Person {
     @Column(name="creation_date")
     private Date creationDate;
     
-    public Person(String firstName, String lastName, String email, Date creationDate){
+    public Person(String firstName, String lastName, String email, Date creationDate)
+{
 	super();
 	this.firstName = firstName;
 	this.lastName = lastName;
