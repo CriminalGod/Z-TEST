@@ -37,6 +37,16 @@ public class ZTestApplication implements CommandLineRunner {
 	clearData();
 //	createPerson();
 	createPersons();
+	getAllPersons();
+    }
+
+    private void getAllPersonById() {
+//	personService.getAllPersonById();
+    }
+    
+    private void getAllPersons() {
+	Iterable<Person> list = personService.getAllPersons();
+	list.forEach(System.out::println);
     }
 
     private void clearData() {

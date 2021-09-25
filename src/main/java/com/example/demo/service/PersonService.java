@@ -25,4 +25,8 @@ public class PersonService {
     public void clearData() {
 	personRepo.deleteAll();
     }
+
+    public Iterable<Person> getAllPersons() {
+	return personRepo.findAll();
+    }
 }
