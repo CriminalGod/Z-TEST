@@ -15,47 +15,47 @@ import com.example.demo.service.PersonService;
 @SpringBootApplication
 public class ZTestApplication implements CommandLineRunner {
 
-    @Autowired
-    private PersonService personService;
+	@Autowired
+	private PersonService personService;
 
-    List<Person> persons = Arrays.asList(new Person("variable", "kumar", "variablekumar@gmail.com", new Date()),
-		new Person("property", "kumar", "propertykumar@gmail.com", new Date()),
-		new Person("argument", "kumar", "argumentkumar@gmail.com", new Date()));
-    
-    public static void main(String[] args) {
-	SpringApplication.run(ZTestApplication.class, args);
-    }
+	List<Person> persons = Arrays.asList(new Person("variable", "kumar", "variablekumar@gmail.com", new Date()),
+			new Person("property", "kumar", "propertykumar@gmail.com", new Date()),
+			new Person("argument", "kumar", "argumentkumar@gmail.com", new Date()));
 
-    private void createPerson() {
-	Person person = new Person("kiran", "kumar", "kirankumar@gmail.com", new Date());
-	Person p = personService.createPerson(person);
-	System.out.println(p);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(ZTestApplication.class, args);
+	}
 
-    @Override
-    public void run(String... args) throws Exception {
-	clearData();
+	private void createPerson() {
+		Person person = new Person("kiran", "kumar", "kirankumar@gmail.com", new Date());
+		Person p = personService.createPerson(person);
+		System.out.println(p);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		clearData();
 //	createPerson();
-	createPersons();
-	getAllPersons();
-    }
+		createPersons();
+//		getAllPersons();
+	}
 
-    private void getAllPersonById() {
+	private void getAllPersonById() {
 //	personService.getAllPersonById();
-    }
-    
-    private void getAllPersons() {
-	Iterable<Person> list = personService.getAllPersons();
-	list.forEach(System.out::println);
-    }
+	}
 
-    private void clearData() {
-	personService.clearData();
-    }
+	private void getAllPersons() {
+		Iterable<Person> list = personService.getAllPersons();
+		list.forEach(System.out::println);
+	}
 
-    private void createPersons() {
-	Iterable<Person> list = personService.createPersons(persons);
-	list.forEach(System.out::println);
-    }
-    
+	private void clearData() {
+		personService.clearData();
+	}
+
+	private void createPersons() {
+		Iterable<Person> list = personService.createPersons(persons);
+		list.forEach(System.out::println);
+	}
+
 }

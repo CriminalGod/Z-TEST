@@ -11,22 +11,22 @@ import com.example.demo.repo.PersonRepo;
 @Service
 public class PersonService {
 
-    @Autowired
-    PersonRepo personRepo;
+	@Autowired
+	PersonRepo personRepo;
 
-    public Person createPerson(Person person) {
-	return personRepo.save(person);
-    }
+	public Person createPerson(Person person) {
+		return personRepo.save(person);
+	}
 
-    public Iterable<Person> createPersons(List<Person> persons) {
-	return personRepo.saveAll(persons);
-    }
+	public Iterable<Person> createPersons(List<Person> persons) {
+		return personRepo.saveAll(persons);
+	}
 
-    public void clearData() {
-	personRepo.deleteAll();
-    }
+	public void clearData() {
+		personRepo.deleteAll();
+	}
 
-    public Iterable<Person> getAllPersons() {
-	return personRepo.findAll();
-    }
+	public Iterable<Person> getAllPersons() {
+		return personRepo.findAll();
+	}
 }
