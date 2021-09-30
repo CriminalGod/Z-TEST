@@ -34,10 +34,15 @@ public class ZTestApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		clearData();
-//	createPerson();
-		createPersons();
-//		getAllPersons();
+		System.out.println(":::: " + "Criteria Trail");
+//		trail().forEach(System.out::println);
+//		personService.trail1().forEach(System.out::println);
+//		personService.trailMultipleUsingSelect();
+		personService.trailMultipleUsingMultiSelect();
+	}
+
+	private List<Person> trail() {
+		return personService.trail();
 	}
 
 	private void getAllPersonById() {
